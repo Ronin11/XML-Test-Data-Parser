@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import manager.Aggregator;
 import manager.Data;
@@ -17,6 +18,7 @@ public class Main {
 		ArrayList<Data> data = new ArrayList<Data>();
 		for(File f : files)
 			data.add(XML.read(f));
+		Collections.sort(data, new Data.DataComparator());
 		JSON.toFile(JSON.output(data));
 	}
 }

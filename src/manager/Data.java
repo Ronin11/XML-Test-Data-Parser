@@ -1,5 +1,7 @@
 package manager;
 
+import java.util.Comparator;
+
 public class Data {
 	int total = 0;
 	int failures = 0;
@@ -25,5 +27,12 @@ public class Data {
 	public int getDisabled(){return disabled;}
 	public int getErrors(){return errors;}
 	public long getTimestamp(){return timestamp;}
+	
+	public static class DataComparator implements Comparator<Data> {
+		@Override
+		public int compare(Data o1, Data o2) {
+			return ((Long)o1.getTimestamp()).compareTo((Long)o2.getTimestamp());
+		}
+	}
 	
 }
