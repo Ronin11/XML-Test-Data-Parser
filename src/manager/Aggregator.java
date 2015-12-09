@@ -11,13 +11,9 @@ public class Aggregator {
 	String homeDirectory = "";
 	ArrayList<Data> data = new ArrayList<Data>();
 	
-	public Aggregator(){
-		
-	}
-	
 	public static ArrayList<File> getAllData(){
 		Collection<File> files = FileUtils.listFiles(
-				  new File("."), 
+				new File(System.getProperty("user.home") + "/Google Drive/TestingResults/."), 
 				  new RegexFileFilter("full_test.xml"), 
 				  DirectoryFileFilter.DIRECTORY
 				);

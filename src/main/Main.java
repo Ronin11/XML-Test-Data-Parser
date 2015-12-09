@@ -18,7 +18,5 @@ public class Main {
 		for(File f : files)
 			data.add(XML.read(f));
 		JSON.toFile(JSON.output(data));
-		
-		System.out.println("done");
 	}
 }
