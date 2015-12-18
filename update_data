@@ -1,0 +1,9 @@
+rm "Results.json"
+
+java -jar aggregateData.jar
+
+git add .
+git commit -m "Data Update"
+git push origin master
+
+
